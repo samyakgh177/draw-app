@@ -9,7 +9,7 @@ export function middleware(req:Request,res:Response,next:NextFunction){
 
     if(decoded){
         //@ts-ignore: TODO: Fix this how can u update the structure of request object in express
-        req.userID = decoded.userId;
+        req.userId = decoded.userId;
         next()
 
     }else{
