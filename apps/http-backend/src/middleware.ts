@@ -3,18 +3,18 @@ import jwt from "jsonwebtoken";
 import { JWT_SECRET } from "@repo/backend-common/config";
 
 
-export function middleware(req:Request,res:Response,next:NextFunction){
+export function middleware(req: Request, res: Response, next: NextFunction) {
     const token = req.headers["authorization"] ?? "";
-    const decoded = jwt.verify(token,JWT_SECRET);
 
-    if(decoded){
-        //@ts-ignore: TODO: Fix this how can u update the structure of request object in express
+    const decoded = jwt.verify(token, JWT_SECRET);
+
+    if (decoded) {
+        // @ts-ignore: TODO: Fix this
         req.userId = decoded.userId;
-        next()
-
-    }else{
+        next();
+    } else {
         res.status(403).json({
-            message:"Unauthorized"
+            message: "Unauthorized"
         })
     }
 }
