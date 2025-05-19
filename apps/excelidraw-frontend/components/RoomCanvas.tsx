@@ -9,7 +9,7 @@ export function RoomCanvas({ roomId }: { roomId: string }) {
 
     //this should be in the hook for connection with the hook
     useEffect(()=>{
-        const ws = new WebSocket(`${WS_URL}?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJlNDFhMDY4Zi0zZTdhLTQxNzYtOWQ2MC04YjEwMDJlMWM3NWYiLCJpYXQiOjE3NDMxODMyNzZ9.IXdMT2FmWgqVjWxM3sR30N43Uao2WB5u9uVzvI5FcYQ`)
+        const ws = new WebSocket(`${WS_URL}?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjYmM1ZGI5Ni1lMGZiLTRkYmEtOWE2NS1lNTgxMTk5YmYzMTMiLCJpYXQiOjE3NDc0MTkzNjd9.tm4Wo992_14RrzIM8Gwb7gcUA8D8R3NoMGVK6SU5yEQ`)
 
         ws.onopen= ()=>{
             setSocket(ws);
